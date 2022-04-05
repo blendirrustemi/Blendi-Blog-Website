@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+
+    <style>
+      /* div{
+            border: 1px solid blue;
+        } */
+
+      .post_blog {
+        width: 30%;
+        border: none;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-radius: 10px;
+        padding: 10px;
+        display: flex;
+      }
+
+      .pic {
+        width: 25%;
+      }
+
+      .post_info {
+        width: 80%;
+      }
+
+      a {
+        text-decoration: none;
+        color: royalblue;
+      }
+
+      hr {
+        border: 0;
+        height: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      }
+    </style>
+  </head>
+
+  <body>
+    {% block content %}
+    <div class="container">
+      <div class="post_blog">
+        <div class="pic">
+          <img src="" alt="img" />
+        </div>
+        <div class="post_info">
+          <div class="date">
+            <small>4th April 2022</small>
+            <hr />
+          </div>
+          <div class="post_title">
+            <h2><a class="" href="">First Post</a></h2>
+          </div>
+          <!-- <hr /> -->
+          <div class="post_content">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
+              veniam dignissimos animi vel saepe alias, labore sit totam
+              perferendis cum soluta, facere dolorem expedita iusto odio earum?
+              Provident, animi numquam?
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>
