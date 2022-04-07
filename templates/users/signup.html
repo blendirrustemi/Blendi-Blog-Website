@@ -34,7 +34,23 @@
       <div class="forms">
         <form method="POST">
           <!-- This is the form where you add blogs-->
-          {% csrf_token %} {{ form | crispy}}
+          {% csrf_token %} 
+          <div class="input_field">
+            <label for="">Username</label>
+            {{ form.username }}
+          </div>
+          <div class="input_field">
+            <label for="">Email</label>
+            {{ form.email }}
+          </div>
+          <div class="input_field">
+            <label for="">Password</label>
+            {{ form.password1 }}
+          </div>
+          <div class="input_field">
+            <label for="">Confirm Password</label>
+            {{ form.password2 }}
+          </div>
           <input type="submit" name="" id="" value="Post" />
         </form>
       </div>
