@@ -51,7 +51,7 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: #333;
+        background-color: #2FA4FF;
       }
 
       li {
@@ -76,10 +76,9 @@
     {% load crispy_forms_tags %} {% block content %}
     <div class="nav">
       <ul>
-        <li><a href="#home">Blendi's Blog Page</a></li>
-        <li style="float: right"><a href="#news">News</a></li>
-        <li style="float: right"><a href="#contact">Contact</a></li>
-        <li style="float: right"><a class="active" href="#about">About</a></li>
+        <li><a href="{%url 'blog-index'%}">Blendi's Blog Page</a></li>
+        <li style="float: right"><a href="{%url 'users-login'%}">Log In</a></li>
+        <li style="float: right"><a href="{%url 'users-sign-up'%}">Sign Up</a></li>
       </ul>
     </div>
     <div class="main-content">
@@ -96,7 +95,7 @@
             <label for="">Password</label>
             {{ form.password }}
           </div>
-          <input class="btn_submit" type="submit" name="" id="" value="Post" />
+          <input class="btn_submit" type="submit" name="" id="" value="Log In" />
         </form>
       </div>
     </div>

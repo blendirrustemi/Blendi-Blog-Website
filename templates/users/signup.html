@@ -44,13 +44,42 @@
       .forms {
         width: fit-content;
       }
+
+      /* Nav */
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #2FA4FF;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover {
+        background-color: #111;
+      }
     </style>
   </head>
 
   <body>
     {% load crispy_forms_tags %} {% block content %}
     <div class="nav">
-      <h3>Blendi Blog App</h3>
+      <ul>
+        <li><a href="{%url 'blog-index'%}">Blendi's Blog Page</a></li>
+        <li style="float: right"><a href="{%url 'users-login'%}">Log In</a></li>
+        <li style="float: right"><a href="{%url 'users-sign-up'%}">Sign Up</a></li>
+      </ul>
     </div>
     <div class="main-content">
       <div class="forms">
@@ -74,7 +103,7 @@
             <label for="">Confirm Password</label>
             {{ form.password2 }}
           </div>
-          <input class="btn_submit" type="submit" name="" id="" value="Post" />
+          <input class="btn_submit" type="submit" name="" id="" value="Sign Up" />
         </form>
       </div>
     </div>

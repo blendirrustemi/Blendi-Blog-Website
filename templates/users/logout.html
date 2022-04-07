@@ -45,9 +45,10 @@
         width: fit-content;
       }
 
-      .main-content{
-          display: flex;
-          flex-direction: column;
+      .main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
       /* Nav */
@@ -56,7 +57,7 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: #333;
+        background-color: #2FA4FF;
       }
 
       li {
@@ -80,20 +81,20 @@
   <body>
     {% load crispy_forms_tags %} {% block content %}
     <div class="nav">
-      <ul>
-        <li><a href="#home">Blendi's Blog Page</a></li>
-        <li style="float: right"><a href="#news">News</a></li>
-        <li style="float: right"><a href="#contact">Contact</a></li>
-        <li style="float: right"><a class="active" href="#about">About</a></li>
-      </ul>
-    </div>
+        <ul>
+          <li><a href="{%url 'blog-index'%}">Blendi's Blog Page</a></li>
+          <li style="float: right"><a href="{%url 'users-login'%}">Log In</a></li>
+          <li style="float: right"><a href="{%url 'users-sign-up'%}">Sign Up</a></li>
+        </ul>
+      </div>
     <div class="main-content">
-        <div class="logout_header">
-            <h4>Logout Page</h4>
-        </div>
-        <div class="log_msg">
-            <p>You have been logged out.</p>
-        </div>
+      <div class="logout_header">
+        <h4>Logout Page</h4>
+      </div>
+      <div class="log_msg">
+        <p>You have been logged out.</p>
+      </div>
+      <a href="{%url 'users-login'%}">Login</a>
     </div>
     {% endblock %}
   </body>

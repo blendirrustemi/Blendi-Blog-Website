@@ -126,9 +126,9 @@
     {%if request.user.is_authenticated %}
     <div class="nav">
       <ul>
-        <li><a href="#home">Blendi's Blog Page</a></li>
-        <li style="float: right"><a href="#about">Logout</a></li>
-        <li style="float: right"><a href="#contact">Profile</a></li>
+        <li><a href="#">Blendi's Blog Page</a></li>
+        <li style="float: right"><a href="{%url 'users-logout'%}">Logout</a></li>
+        <li style="float: right"><a href="#">Profile</a></li>
       </ul>
     </div>
 
@@ -136,9 +136,9 @@
 
     <div class="nav">
       <ul>
-        <li><a href="#home">Blendi's Blog Page</a></li>
-        <li style="float: right"><a href="#about">Sign Up</a></li>
-        <li style="float: right"><a href="#contact">Profile</a></li>
+        <li><a href="#">Blendi's Blog Page</a></li>
+        <li style="float: right"><a href="{%url 'users-login'%}">Log In</a></li>
+        <li style="float: right"><a href="{%url 'users-sign-up'%}">Sign Up</a></li>
       </ul>
     </div>
     
