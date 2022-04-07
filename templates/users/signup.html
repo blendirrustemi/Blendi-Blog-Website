@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        text-decoration: none;
+      }
+
+      .main-content {
+        display: flex;
+        margin: 50px 0;
+        padding: 0 50px;
+        gap: 50px;
+      }
+
+
+    </style>
+  </head>
+
+  <body>
+    {% load crispy_forms_tags %} 
+    {% block content %}
+    <div class="nav">
+      <h3>Blendi Blog App</h3>
+    </div>
+    <div class="main-content">
+      <h3 class="sign">Sign Up Page</h3>
+      <div class="forms">
+        <form method="POST">
+          <!-- This is the form where you add blogs-->
+          {% csrf_token %} {{ form | crispy}}
+          <input type="submit" name="" id="" value="Post" />
+        </form>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>
