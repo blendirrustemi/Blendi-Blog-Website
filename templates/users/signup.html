@@ -12,11 +12,35 @@
         text-decoration: none;
       }
 
-      .main-content {
+      .btn_submit {
+        align-self: center;
+        border: none;
+        outline: none;
+        padding: 1em 2em;
+        border-radius: 15px;
+        background: #4267B2;
+        color: #fff;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .btn_submit:hover {
+        background: #487adf;
+      }
+
+      .form_container {
         display: flex;
-        margin: 50px 0;
-        padding: 0 50px;
-        gap: 50px;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .input_field {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .forms {
+        width: fit-content;
       }
 
 
@@ -30,9 +54,9 @@
       <h3>Blendi Blog App</h3>
     </div>
     <div class="main-content">
-      <h3 class="sign">Sign Up Page</h3>
       <div class="forms">
-        <form method="POST">
+        <form class="form_container" method="POST">
+          <h3 class="sign">Sign Up Page</h3>
           <!-- This is the form where you add blogs-->
           {% csrf_token %} 
           <div class="input_field">
@@ -51,7 +75,7 @@
             <label for="">Confirm Password</label>
             {{ form.password2 }}
           </div>
-          <input type="submit" name="" id="" value="Post" />
+          <input class="btn_submit" type="submit" name="" id="" value="Post" />
         </form>
       </div>
     </div>
