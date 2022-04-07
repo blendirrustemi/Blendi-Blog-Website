@@ -119,6 +119,8 @@ CRISPY_TEMPLATE_PACK = 'uni_form'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
+LOGIN_REDIRECT_URL = 'blog-index'
+
 STATIC_URL = 'static/'
 
 # Default primary key field type

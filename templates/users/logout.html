@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up</title>
+    <title>Log Out</title>
 
     <style>
       * {
@@ -44,39 +44,56 @@
       .forms {
         width: fit-content;
       }
+
+      .main-content{
+          display: flex;
+          flex-direction: column;
+      }
+
+      /* Nav */
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover {
+        background-color: #111;
+      }
     </style>
   </head>
 
   <body>
     {% load crispy_forms_tags %} {% block content %}
     <div class="nav">
-      <h3>Blendi Blog App</h3>
+      <ul>
+        <li><a href="#home">Blendi's Blog Page</a></li>
+        <li style="float: right"><a href="#news">News</a></li>
+        <li style="float: right"><a href="#contact">Contact</a></li>
+        <li style="float: right"><a class="active" href="#about">About</a></li>
+      </ul>
     </div>
     <div class="main-content">
-      <div class="forms">
-        <form class="form_container" method="POST">
-          <h3 class="sign">Sign Up Page</h3>
-          <!-- This is the form where you add blogs-->
-          {% csrf_token %}
-          <div class="input_field">
-            <label for="">Username</label>
-            {{ form.username }}
-          </div>
-          <div class="input_field">
-            <label for="">Email</label>
-            {{ form.email }}
-          </div>
-          <div class="input_field">
-            <label for="">Password</label>
-            {{ form.password1 }}
-          </div>
-          <div class="input_field">
-            <label for="">Confirm Password</label>
-            {{ form.password2 }}
-          </div>
-          <input class="btn_submit" type="submit" name="" id="" value="Post" />
-        </form>
-      </div>
+        <div class="logout_header">
+            <h4>Logout Page</h4>
+        </div>
+        <div class="log_msg">
+            <p>You have been logged out.</p>
+        </div>
     </div>
     {% endblock %}
   </body>
