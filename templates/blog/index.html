@@ -7,39 +7,83 @@
     <title>Home Page</title>
 
     <style>
+      * {
+        box-sizing: border-box;
+        text-decoration: none;
+      }
+      .main-content {
+        display: flex;
+        margin: 50px 0;
+        padding: 0 50px;
+        gap: 50px;
+      }
       
+      .posts-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-left: 200px;
+      }
+
+      .post_blog {
+        border: 1px solid rgba(160, 160, 160, 0.5);
+        padding: 1em;
+        border-radius: 15px;
+        display: flex;
+        gap: 15px;
+        max-width: 700px;
+        word-break: break-all;
+      }
+      .pic {
+        width: fit-content;
+        flex-shrink: 0;
+        border-radius: 15px;
+      }
+      .pic img {
+        border-radius: inherit;
+      }
+
+      .forms{
+        margin-left: 200px;
+      }
+
     </style>
   </head>
 
   <body>
-    {% block content %}
+    {% load crispy_forms_tags %} {% block content %}
     <div class="nav">
       <h3>Blendi Blog App</h3>
     </div>
-    <div class="container">
+    <div class="main-content">
       <div class="forms">
-        <h3>Form</h3>
+        <form method="POST">
+          <!-- This is the form where you add blogs-->
+          {% csrf_token %} 
+          {{ form | crispy}}
+          <input type="submit" name="" id="" value="Post" />
+        </form>
       </div>
-      {% for post in posts %}
-      <div class="post_blog">
-        <div class="pic">
-          <img src="" alt="img" />
+      <div class="posts-container">
+        {% for post in posts %}
+        <div class="post_blog">
+          <div class="pic">
+            <img src="https://picsum.photos/150" alt="img" />
+          </div>
+          <div class="post_info">
+            <div class="date">
+              <small>{{ post.date_created }}</small>
+            </div>
+            <div class="post_title">
+              <h2><a class="" href="">{{ post.title }}</a></h2>
+            </div>
+            <div class="post_content">
+              <p>{{ post.content }}</p>
+            </div>
+          </div>
         </div>
-        <div class="post_info">
-          <div class="date">
-            <small>{{ post.date_created }}</small>
-            <hr />
-          </div>
-          <div class="post_title">
-            <h2><a class="" href="">{{ post.title }}</a></h2>
-          </div>
-          <!-- <hr /> -->
-          <div class="post_content">
-            <p>{{ post.content }}</p>
-          </div>
-        </div>
+        {%endfor%}
       </div>
-      {%endfor%}
     </div>
     {% endblock %}
   </body>
