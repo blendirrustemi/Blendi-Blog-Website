@@ -10,24 +10,149 @@
       * {
         box-sizing: border-box;
         text-decoration: none;
-        margin: 0;
+      }
+
+      body,
+      html {
+        width: 100%;
+        height: 100%;
+      }
+
+      /* login deisgn */
+      body {
         padding: 0;
+        margin: 0;
+        background: linear-gradient(120deg, #2980b9, #8e44ad);
+        font-family: montserrat, sans-serif;
+        overflow: hidden;
+        height: 100vh;
+      }
+
+      
+      .main-content {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        margin: 50px 0;
+        padding: 0 50px;
+        gap: 50px;
+      }
+
+      .forms {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 400px;
+        transform: translate(-50%, -50%);
+        border-radius: 20px;
+        background: #fcfcfc;
+      }
+
+      .forms h3 {
+        border-bottom: 1px solid silver;
+        text-align: center;
+        padding: 0 0 20px 0;
+      }
+
+      .forms form {
+        box-sizing: border-box;
+        padding: 0 40px;
+      }
+
+      form .input_field {
+        position: relative;
+        margin: 30px 0;
+        border-bottom: 2px solid #adadad;
+      }
+
+      .input_field input {
+        width: 100%;
+        height: 40px;
+        padding: 0 5px;
+        font-size: 16px;
+        background: none;
+        outline: none;
+        border: none;
+      }
+
+      .input_field label {
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        pointer-events: none;
+        font-size: 16px;
+        color: #adadad;
+        transition: 0.5s;
+      }
+
+      .input_field span::before {
+        position: absolute;
+        content: "";
+        top: 45px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background: #2691d9;
+      }
+
+      .input_field input:focus ~ label,
+      .input_field input:valid ~ label {
+        top: -5px;
+        color: #2691d9;
+      }
+
+      .input_field input:focus ~ span::before,
+      .input_field input:valid ~ span::before {
+        width: 100%;
+      }
+
+      .forgot_pass {
+        margin: -5px 0 20px 5px;
+        color: #a6a6a6;
+        cursor: pointer;
+      }
+
+      .forgot_pass {
+        text-decoration: underline;
       }
 
       .btn_submit {
+        width: 100%;
+        height: 50px;
+        border: 1px solid;
+        font-size: 18px;
+        font-weight: 700;
         align-self: center;
-        border: none;
         outline: none;
-        padding: 1em 2em;
         border-radius: 15px;
+        cursor: pointer;
         background: #4267b2;
         color: #fff;
-        cursor: pointer;
         transition: 0.3s;
       }
+
       .btn_submit:hover {
-        background: #487adf;
+        background-color: #2691d9;
       }
+
+      .create_acc {
+        text-align: center;
+        font-size: 16px;
+        margin: 30px 0;
+        color: #666666;
+      }
+
+      .create_acc a {
+        text-decoration: none;
+        color: #2691d9;
+      }
+
+      .create_acc a {
+        text-decoration: underline;
+      }
+
+      /*  */
 
       .form_container {
         display: flex;
@@ -41,17 +166,13 @@
         gap: 5px;
       }
 
-      .forms {
-        width: fit-content;
-      }
-
       /* Nav */
       ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: #2FA4FF;
+        background-color: #2fa4ff;
       }
 
       li {
@@ -78,7 +199,9 @@
       <ul>
         <li><a href="{%url 'blog-index'%}">Blendi's Blog Page</a></li>
         <li style="float: right"><a href="{%url 'users-login'%}">Log In</a></li>
-        <li style="float: right"><a href="{%url 'users-sign-up'%}">Sign Up</a></li>
+        <li style="float: right">
+          <a href="{%url 'users-sign-up'%}">Sign Up</a>
+        </li>
       </ul>
     </div>
     <div class="main-content">
@@ -88,14 +211,28 @@
           <!-- This is the form where you add blogs-->
           {% csrf_token %}
           <div class="input_field">
-            <label for="">Username</label>
             {{ form.username }}
+            <span></span>
+            <label for="">Username</label>
           </div>
           <div class="input_field">
-            <label for="">Password</label>
+            <span></span>
             {{ form.password }}
+            <label for="">Password</label>
           </div>
-          <input class="btn_submit" type="submit" name="" id="" value="Log In" />
+          <div class="forgot_pass">
+            <a href="">Forgot Password</a>
+          </div>
+          <input
+            class="btn_submit"
+            type="submit"
+            name=""
+            id=""
+            value="Log In"
+          />
+          <div class="create_acc">
+            Want to join us? <a href="{%url 'users-sign-up'%}">Signup</a>
+          </div>
         </form>
       </div>
     </div>

@@ -10,39 +10,12 @@
       * {
         box-sizing: border-box;
         text-decoration: none;
+      }
+
+      body{
         margin: 0;
         padding: 0;
-      }
-
-      .btn_submit {
-        align-self: center;
-        border: none;
-        outline: none;
-        padding: 1em 2em;
-        border-radius: 15px;
-        background: #4267b2;
-        color: #fff;
-        cursor: pointer;
-        transition: 0.3s;
-      }
-      .btn_submit:hover {
-        background: #487adf;
-      }
-
-      .form_container {
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-      }
-
-      .input_field {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-      }
-
-      .forms {
-        width: fit-content;
+        font-family: montserrat, sans-serif;
       }
 
       .main-content {
@@ -57,7 +30,7 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: #2FA4FF;
+        background-color: #2fa4ff;
       }
 
       li {
@@ -81,12 +54,14 @@
   <body>
     {% load crispy_forms_tags %} {% block content %}
     <div class="nav">
-        <ul>
-          <li><a href="{%url 'blog-index'%}">Blendi's Blog Page</a></li>
-          <li style="float: right"><a href="{%url 'users-login'%}">Log In</a></li>
-          <li style="float: right"><a href="{%url 'users-sign-up'%}">Sign Up</a></li>
-        </ul>
-      </div>
+      <ul>
+        <li><a href="{%url 'blog-index'%}">Blendi's Blog Page</a></li>
+        <li style="float: right"><a href="{%url 'users-login'%}">Log In</a></li>
+        <li style="float: right">
+          <a href="{%url 'users-sign-up'%}">Sign Up</a>
+        </li>
+      </ul>
+    </div>
     <div class="main-content">
       <div class="logout_header">
         <h4>Logout Page</h4>
@@ -99,3 +74,4 @@
     {% endblock %}
   </body>
 </html>
+
