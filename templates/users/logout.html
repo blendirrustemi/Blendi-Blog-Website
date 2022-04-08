@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log Out</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        text-decoration: none;
+      }
+
+      body{
+        margin: 0;
+        padding: 0;
+        font-family: montserrat, sans-serif;
+      }
+
+      .main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Nav */
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #2fa4ff;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover {
+        background-color: #111;
+      }
+    </style>
+  </head>
+
+  <body>
+    {% load crispy_forms_tags %} {% block content %}
+    <div class="nav">
+      <ul>
+        <li><a href="{%url 'blog-index'%}">Blendi's Blog Page</a></li>
+        <li style="float: right"><a href="{%url 'users-login'%}">Log In</a></li>
+        <li style="float: right">
+          <a href="{%url 'users-sign-up'%}">Sign Up</a>
+        </li>
+      </ul>
+    </div>
+    <div class="main-content">
+      <div class="logout_header">
+        <h3>Logout Page</h3>
+      </div>
+      <div class="log_msg">
+        <p>You have been logged out.</p>
+      </div>
+      <a href="{%url 'users-login'%}">Login</a>
+      <br>
+      or go to
+      <br>
+      <br>
+      <a href="{%url 'blog-index'%}">Home Page</a>
+    </div>
+    {% endblock %}
+  </body>
+</html>
+

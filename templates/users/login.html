@@ -4,21 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up</title>
+    <title>Log In</title>
 
     <style>
       * {
         box-sizing: border-box;
         text-decoration: none;
       }
-/* 
-      body{
-        margin: 0;
-        padding: 0;
-      } */
 
-      /* SIGN UP DESIGN */
+      body,
+      html {
+        width: 100%;
+        height: 100%;
+      }
 
+      /* login deisgn */
       body {
         padding: 0;
         margin: 0;
@@ -107,6 +107,16 @@
         width: 100%;
       }
 
+      .forgot_pass {
+        margin: -5px 0 20px 5px;
+        color: #a6a6a6;
+        cursor: pointer;
+      }
+
+      .forgot_pass {
+        text-decoration: underline;
+      }
+
       .btn_submit {
         width: 100%;
         height: 50px;
@@ -116,7 +126,6 @@
         align-self: center;
         outline: none;
         border-radius: 15px;
-        margin-bottom: 25px;
         cursor: pointer;
         background: #4267b2;
         color: #fff;
@@ -127,10 +136,23 @@
         background-color: #2691d9;
       }
 
+      .create_acc {
+        text-align: center;
+        font-size: 16px;
+        margin: 30px 0;
+        color: #666666;
+      }
 
-      /* END */
+      .create_acc a {
+        text-decoration: none;
+        color: #2691d9;
+      }
 
-    
+      .create_acc a {
+        text-decoration: underline;
+      }
+
+      /*  */
 
       .form_container {
         display: flex;
@@ -143,7 +165,6 @@
         flex-direction: column;
         gap: 5px;
       }
-
 
       /* Nav */
       ul {
@@ -186,7 +207,7 @@
     <div class="main-content">
       <div class="forms">
         <form class="form_container" method="POST">
-          <h3 class="sign">Sign Up</h3>
+          <h3 class="sign">Log In</h3>
           <!-- This is the form where you add blogs-->
           {% csrf_token %}
           <div class="input_field">
@@ -195,27 +216,23 @@
             <label for="">Username</label>
           </div>
           <div class="input_field">
-            {{ form.email }}
             <span></span>
-            <label for="">Email</label>
-          </div>
-          <div class="input_field">
-            {{ form.password1 }}
-            <span></span>
+            {{ form.password }}
             <label for="">Password</label>
           </div>
-          <div class="input_field">
-            {{ form.password2 }}
-            <span></span>
-            <label for="">Confirm Password</label>
+          <div class="forgot_pass">
+            <a href="">Forgot Password</a>
           </div>
           <input
             class="btn_submit"
             type="submit"
             name=""
             id=""
-            value="Sign Up"
+            value="Log In"
           />
+          <div class="create_acc">
+            Want to join us? <a href="{%url 'users-sign-up'%}">Signup</a>
+          </div>
         </form>
       </div>
     </div>
