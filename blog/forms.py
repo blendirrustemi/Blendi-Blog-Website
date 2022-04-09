@@ -5,4 +5,4 @@ class PostModelForm(forms.ModelForm):
     content = forms.CharField(widget=forms.Textarea(attrs={'rows': 4}))
     class Meta:
         model = PostModel
-        fields = ('title', 'content', 'profile_pic')
+        fields = ('title', 'content', 'profile_pic', 'rep_link')

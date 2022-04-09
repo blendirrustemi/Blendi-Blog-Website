@@ -10,6 +10,7 @@ class PostModel(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
 
     profile_pic = models.ImageField(default="blendi_rrustemi.png" , null=True, blank=True)
+    rep_link = models.CharField(max_length=100)
 
     class Meta:
         ordering = ('-date_created',)

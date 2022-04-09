@@ -226,20 +226,24 @@
       <div class="posts-container">
         {% for post in posts %}
         <div class="post_blog">
-          <div class="pic">
-            <!-- <img src="https://picsum.photos/150" alt="img" /> -->
-            <img src="{{post.profile_pic.url}}" alt="img" width="500" height="282"/>
-          </div>
+          <a href="{{post.rep_link}}">
+            <div class="pic">
+              <img src="{{post.profile_pic.url}}" alt="img" width="500" height="282"/>
+            </div>
+          </a>
           <div class="post_info">
             <div class="date">
               <small>{{ post.date_created }}</small>
             </div>
             <div class="post_title">
-              <h2><a class="" href="">{{ post.title }}</a></h2>
+              <h2><a class="" href="{{post.rep_link}}">{{ post.title }}</a></h2>
             </div>
             <div class="post_content">
               <p>{{ post.content }}</p>
             </div>
+            <!-- <div class="post_rep">
+              <a href="{{post.rep_link}}">{{post.rep_link}}</a>
+            </div> -->
           </div>
         </div>
         {%endfor%}
@@ -259,6 +263,10 @@
           <div class="input_field content-field">
             <label for="">Content</label>
             {{ form.content }}
+          </div>
+          <div class="input_field">
+            <label for="">Repository Link</label>
+            {{form.rep_link}}
           </div>
           <div class="profile_pic">
             {{ form.profile_pic}}
