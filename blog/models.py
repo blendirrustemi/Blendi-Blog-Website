@@ -9,7 +9,7 @@ class PostModel(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     date_created = models.DateTimeField(auto_now_add=True)
 
-    profile_pic = models.ImageField(default="no_pic.jpg" , null=True, blank=True)
+    profile_pic = models.ImageField(default="blendi_rrustemi.png" , null=True, blank=True)
 
     class Meta:
         ordering = ('-date_created',)
