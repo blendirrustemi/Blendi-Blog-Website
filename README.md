@@ -4,5 +4,7 @@ Blog Website where users can signup/login to their accounts, and see or add blog
 !!! Clone this Repository
 
 1. Make sure to have Python and Django installed on your machine.
-2. Open the Folder with an IDE and open Terminal
-3. Type: python manage.py runserver and add the link to a browser  
+2. Open the Folder with an IDE and on the Terminal write: python manage.py runserver and add the link to a browser  
+
+ADMIN USERNAME: admin
+ADMIN PASSWORD: blendi321
