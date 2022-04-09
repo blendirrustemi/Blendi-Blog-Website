@@ -241,27 +241,12 @@
       <div class="btn_post" onclick="scrolltodiv()">  
         <h5>Post a Blog</h5>
       </div>
-      <!-- <div class="forms">
-        <form class="form_container" method="POST">
-          This is the form where you add blogs
-          {% csrf_token %}
-          <div class="input_field">
-            <label for="">Title</label>
-            {{ form.title }}
-          </div>
-          <div class="input_field content-field">
-            <label for="">Content</label>
-            {{ form.content }}
-          </div>
-          <input class="btn_submit" type="submit" name="" id="" value="Post" />
-        </form>
-      </div> -->
       <div class="posts-container">
         {% for post in posts %}
         <div class="post_blog">
           <div class="pic">
             <!-- <img src="https://picsum.photos/150" alt="img" /> -->
-            <img src="{{post.profile_pic.url}}" alt="img" width="300" height="169"/>
+            <img src="{{post.profile_pic.url}}" alt="img" width="500" height="282"/>
           </div>
           <div class="post_info">
             <div class="date">
@@ -282,7 +267,7 @@
     {%if request.user.is_authenticated %}
     <div class="form-wrapper">
       <div class="forms" id="down">
-        <form class="form_container" method="POST">
+        <form class="form_container" method="POST" enctype="multipart/form-data">
           <!-- This is the form where you add blogs-->
           {% csrf_token %}
           <div class="input_field">
@@ -292,6 +277,9 @@
           <div class="input_field content-field">
             <label for="">Content</label>
             {{ form.content }}
+          </div>
+          <div class="profile_pic">
+            {{ form.profile_pic}}
           </div>
           <input class="btn_submit" type="submit" name="" id="" value="Post" />
         </form>

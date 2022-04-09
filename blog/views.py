@@ -1,3 +1,4 @@
+from operator import itemgetter
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import RequestContext
@@ -9,7 +10,7 @@ from .forms import PostModelForm
 def index(request):
     posts = PostModel.objects.all()
     if request.method == 'POST':
-        form = PostModelForm(request.POST)
+        form = PostModelForm(request.POST, request.FILES)
         if form.is_valid():
            instance = form.save(commit=False)
            instance.author = request.user
@@ -24,4 +25,5 @@ def index(request):
     }
 
     return render(request, 'blog/index.html', context)
+
 
