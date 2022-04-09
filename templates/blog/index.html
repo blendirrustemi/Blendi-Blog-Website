@@ -8,137 +8,170 @@
 
     <style>
       * {
-    box-sizing: border-box;
-    text-decoration: none;
-  }
-  
-  body{
-    margin: 0;
-    padding: 0;
-    font-family: montserrat, sans-serif;
-  }
+        box-sizing: border-box;
+        text-decoration: none;
+      }
 
-  body,
-  html {
-    width: 100%;
-    height: 100%;
-    /* background: linear-gradient(120deg, #2980b9, #8e44ad); */
-    background: #ebebeb;
-    background-repeat: repeat-y;
-  }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: montserrat, sans-serif;
+      }
 
-  .main-content {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin: 50px 0;
-    padding: 0 50px;
-    gap: 50px;
-  }
+      body,
+      html {
+        width: 100%;
+        height: 100%;
+        /* background: linear-gradient(120deg, #2980b9, #8e44ad); */
+        background: #ebebeb;
+        background-repeat: repeat-y;
+      }
 
-  .posts-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: fit-content;
-  }
-  
-  .post_blog {
-    border: 1px solid rgba(160, 160, 160, 0.5);
-    padding: 1em;
-    border-radius: 15px;
-    display: flex;
-    gap: 15px;
-    width: 750px;
-    max-width: 90%;
-    word-break: break-all;
-    background-color: rgba(255, 255, 255, 0.85);
-  }
-  .pic {
-    width: fit-content;
-    flex-shrink: 0;
-    border-radius: 15px;
-  }
-  .pic img {
-    border-radius: inherit;
-  }
+      .main-content {
+        display: flex;
+        justify-content: space-evenly;
+        /* flex-wrap: wrap; */
+        margin: 100px 0;
+        gap: 50px;
+        padding-bottom: 50px;
+      }
 
-  .forms {
-    width: fit-content;
-  }
+      .posts-container {
+        display: flex;
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        /* width: fit-content; */
+      }
 
-  .input_field {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
+      .post_blog {
+        border: 1px solid rgba(160, 160, 160, 0.5);
+        padding: 1em;
+        border-radius: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        /* flex: 1 1 45%; */
+        width: clamp(300px, 45%, 90%);
+        background-color: rgba(255, 255, 255, 0.85);
+      }
 
-  .input_field input, .input_field textarea {
-    padding: 5px;
-    border-radius: 5px;
-    border: none;
-  }
+      .post_blog .post_info .post_content p {
+        width: 100%;
+      }
 
-  .content-field textarea {
-    resize: vertical !important;
-  }
+      .post_info > * {
+        width: fit-content !important;
+      }
 
-  .form_container {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-  }
+      .pic {
+        width: fit-content;
+        flex-shrink: 0;
+        border-radius: 15px;
+      }
+      .pic img {
+        border-radius: inherit;
+      }
 
-  .btn_submit {
-    align-self: center;
-    border: none;
-    outline: none;
-    padding: 1em 2em;
-    border-radius: 15px;
-    background: #2956b1;
-    color: #fff;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  .btn_submit:hover {
-    background: #487adf;
-  }
+      .form-wrapper {
+        padding-bottom: 75px;
+      }
 
-  /* Nav */
+      .forms {
+        margin: 0 auto;
+        padding: 18px;
+        width: fit-content;
+        max-width: 90%;
+        border-radius: 15px;
+        box-shadow: 13px 13px 18px #d4d4d4, -13px -13px 18px #ffffff;
+      }
 
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #2fa4ff;
-  }
+      .input_field {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
 
-  li {
-    float: left;
-  }
+      .input_field input,
+      .input_field textarea {
+        padding: 5px;
+        border-radius: 5px;
+        border: none;
+      }
 
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
+      .content-field textarea {
+        resize: vertical !important;
+      }
 
-  li a:hover {
-    background-color: #111;
-  }
+      .form_container {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
 
-  h3{
-    text-align: center;
-  }
+      .btn_submit {
+        align-self: center;
+        border: none;
+        outline: none;
+        padding: 1em 2em;
+        border-radius: 15px;
+        background: #2956b1;
+        color: #fff;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .btn_submit:hover {
+        background: #487adf;
+      }
+
+      /* Nav */
+
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0 60px;
+        overflow: hidden;
+        background-color: #2fa4ff;
+      }
+
+      @media (max-width: 500px) {
+        ul {
+          padding: 0;
+        }
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover {
+        background-color: #111;
+      }
+
+      h3 {
+        text-align: center;
+      }
     </style>
   </head>
 
   <body>
-    {% block content %} 
-    {%if request.user.is_authenticated %}
+    {% block content %} {%if request.user.is_authenticated %}
     <div class="nav">
       <ul>
         <li><a href="#">Blendi's Blog Page</a></li>
@@ -149,10 +182,10 @@
       </ul>
     </div>
 
-    <div class="main-content">
+    <!-- <div class="main-content">
       <div class="forms">
         <form class="form_container" method="POST">
-          <!-- This is the form where you add blogs-->
+           This is the form where you add blogs
           {% csrf_token %}
           <div class="input_field">
             <label for="">Title</label>
@@ -165,7 +198,7 @@
           <input class="btn_submit" type="submit" name="" id="" value="Post" />
         </form>
       </div>
-    </div>
+    </div> -->
 
     {% else %}
 
@@ -178,12 +211,11 @@
         </li>
       </ul>
     </div>
-    <h3>Please Login to Post on your Blog!</h3>
-    
+    <h3>Personal Portfolio!</h3>
+
     {% endif %}
 
     <div class="main-content">
-      
       <!-- <div class="forms">
         <form class="form_container" method="POST">
           This is the form where you add blogs
@@ -220,7 +252,25 @@
         {%endfor%}
       </div>
     </div>
-    
-    {% endblock %}
+
+    {%if request.user.is_authenticated %}
+    <div class="form-wrapper">
+      <div class="forms">
+        <form class="form_container" method="POST">
+          <!-- This is the form where you add blogs-->
+          {% csrf_token %}
+          <div class="input_field">
+            <label for="">Title</label>
+            {{ form.title }}
+          </div>
+          <div class="input_field content-field">
+            <label for="">Content</label>
+            {{ form.content }}
+          </div>
+          <input class="btn_submit" type="submit" name="" id="" value="Post" />
+        </form>
+      </div>
+    </div>
+    {% endif %} {% endblock %}
   </body>
 </html>

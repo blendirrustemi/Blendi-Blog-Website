@@ -7,11 +7,13 @@
     <title>Sign Up</title>
 
     <style>
-      * {
+      *,
+      *::before,
+      *::after {
         box-sizing: border-box;
         text-decoration: none;
       }
-/* 
+      /* 
       body{
         margin: 0;
         padding: 0;
@@ -28,22 +30,22 @@
         height: 100vh;
       }
 
-      
       .main-content {
         display: flex;
         justify-content: space-evenly;
         flex-wrap: wrap;
-        margin: 50px 0;
-        padding: 0 50px;
-        gap: 50px;
+        padding: 50px;
+      }
+
+      @media (max-width: 500px) {
+        .main-content {
+          padding: 50px 0;
+        }
       }
 
       .forms {
-        position: absolute;
-        top: 50%;
-        left: 50%;
         width: 400px;
-        transform: translate(-50%, -50%);
+        max-width: 90%;
         border-radius: 20px;
         background: #fcfcfc;
       }
@@ -55,7 +57,6 @@
       }
 
       .forms form {
-        box-sizing: border-box;
         padding: 0 40px;
       }
 
@@ -127,10 +128,7 @@
         background-color: #2691d9;
       }
 
-
       /* END */
-
-    
 
       .form_container {
         display: flex;
@@ -144,18 +142,29 @@
         gap: 5px;
       }
 
-
       /* Nav */
-      ul {
+      .nav ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
         overflow: hidden;
         background-color: #2fa4ff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
 
-      li {
-        float: left;
+      .nav ul .navigation {
+        display: flex;
+        align-items: center;
+      }
+
+      @media (max-width: 400px) {
+        .nav ul .navigation {
+          flex-direction: column;
+          align-items: flex-end;
+        }
+        
       }
 
       li a {
@@ -163,7 +172,7 @@
         color: white;
         text-align: center;
         padding: 14px 16px;
-        text-decoration: none;
+        transition: 0.3s;
       }
 
       li a:hover {
@@ -173,14 +182,16 @@
   </head>
 
   <body>
-     {% block content %}
+    {% block content %}
     <div class="nav">
       <ul>
         <li><a href="{%url 'blog-index'%}">Blendi's Blog Page</a></li>
-        <li style="float: right"><a href="{%url 'users-login'%}">Log In</a></li>
-        <li style="float: right">
-          <a href="{%url 'users-sign-up'%}">Sign Up</a>
-        </li>
+        <div class="navigation">
+          <li><a href="{%url 'users-login'%}">Log In</a></li>
+          <li>
+            <a href="{%url 'users-sign-up'%}">Sign Up</a>
+          </li>
+        </div>
       </ul>
     </div>
     <div class="main-content">
