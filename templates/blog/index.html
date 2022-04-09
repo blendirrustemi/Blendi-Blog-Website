@@ -12,6 +12,10 @@
         text-decoration: none;
       }
 
+      html{
+        scroll-behavior: smooth;
+      }
+
       body {
         margin: 0;
         padding: 0;
@@ -22,7 +26,6 @@
       html {
         width: 100%;
         height: 100%;
-        /* background: linear-gradient(120deg, #2980b9, #8e44ad); */
         background: #ebebeb;
         background-repeat: repeat-y;
       }
@@ -30,19 +33,18 @@
       .main-content {
         display: flex;
         justify-content: space-evenly;
-        /* flex-wrap: wrap; */
+        flex-direction: column;
         margin: 100px 0;
         gap: 50px;
-        padding-bottom: 50px;
+        align-items: center;
+        /* padding-bottom: 30px; */
       }
 
       .posts-container {
         display: flex;
-        /* flex-direction: column; */
         flex-wrap: wrap;
         justify-content: center;
         gap: 15px;
-        /* width: fit-content; */
       }
 
       .post_blog {
@@ -164,14 +166,32 @@
         background-color: #111;
       }
 
-      h3 {
+      h2, h3, h5 {
         text-align: center;
+        margin: 0;
       }
+
+      .login_h3{
+        padding-bottom: 50px;
+        margin-top: -50px;
+      }
+
+      .btn_post{
+        height:50px;
+        width:150px;
+        background-color: #2fa4ff;
+        border-radius: 10px;
+        padding: 17px;
+        color: #fff;
+        cursor: pointer;
+      }
+
+    
     </style>
   </head>
 
   <body>
-    {% block content %} {%if request.user.is_authenticated %}
+        {% block content %} {%if request.user.is_authenticated %}
     <div class="nav">
       <ul>
         <li><a href="#">Blendi's Blog Page</a></li>
@@ -211,11 +231,15 @@
         </li>
       </ul>
     </div>
-    <h3>Personal Portfolio!</h3>
 
     {% endif %}
-
-    <div class="main-content">
+    
+    
+    <div class="main-content" id="up">
+      <h2>Personal Portfolio!</h2>
+      <div class="btn_post" onclick="scrolltodiv()">  
+        <h5>Post a Blog</h5>
+      </div>
       <!-- <div class="forms">
         <form class="form_container" method="POST">
           This is the form where you add blogs
@@ -255,7 +279,7 @@
 
     {%if request.user.is_authenticated %}
     <div class="form-wrapper">
-      <div class="forms">
+      <div class="forms" id="down">
         <form class="form_container" method="POST">
           <!-- This is the form where you add blogs-->
           {% csrf_token %}
@@ -271,6 +295,17 @@
         </form>
       </div>
     </div>
+
+    {% else %}
+    <h3 class="login_h3" >Please Login to Post Blogs into your account</h3>
+
     {% endif %} {% endblock %}
+
+    <script>
+      function scrolltodiv(){
+        var elem = document.getElementById("down");
+        elem.scrollIntoView();
+      }
+      </script>
   </body>
 </html>
