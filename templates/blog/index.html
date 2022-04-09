@@ -74,6 +74,7 @@
       }
       .pic img {
         border-radius: inherit;
+        width: 100%;
       }
 
       .form-wrapper {
@@ -259,7 +260,8 @@
         {% for post in posts %}
         <div class="post_blog">
           <div class="pic">
-            <img src="https://picsum.photos/150" alt="img" />
+            <!-- <img src="https://picsum.photos/150" alt="img" /> -->
+            <img src="{{post.profile_pic.url}}" alt="img" width="300" height="169"/>
           </div>
           <div class="post_info">
             <div class="date">
