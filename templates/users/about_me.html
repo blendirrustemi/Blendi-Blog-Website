@@ -221,15 +221,36 @@
 
   <body>
     {% block content %}
+    {%if request.user.is_authenticated %}
+    <div class="nav">
+      <ul>
+        <li><a href="{%url 'blog-index'%}">Blendi's Portfolio</a></li>
+        <div class="navigation">
+          
+          <!-- <li><a href="{%url 'users-login'%}">Log In</a></li> -->
+          <li style="float: right"><a href="#">{{request.user.username}}</a></li>
+          <li><a href="{%url 'users-about_me'%}">About Me</a></li>
+          <li style="float: right">
+            <a href="{%url 'users-logout'%}">Logout</a>
+          </li>
+        </div>
+      </ul>
+    </div>
+
+    {%else%}
     <div class="nav">
       <ul>
         <li><a href="{%url 'blog-index'%}">Blendi's Portfolio</a></li>
         <div class="navigation">
           <li><a href="{%url 'users-about_me'%}">About Me</a></li>
           <li><a href="{%url 'users-login'%}">Log In</a></li>
+          <!-- <li style="float: right"><a href="#">{{request.user.username}}</a></li> -->
         </div>
       </ul>
     </div>
+
+
+    {%endif %}
     <div class="main-content">
       <div class="title_header">
         <!-- <h2>Blendi Rrustemi</h2> -->
