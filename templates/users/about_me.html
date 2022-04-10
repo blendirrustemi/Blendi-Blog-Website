@@ -68,10 +68,20 @@
         text-align: center;
         padding: 14px 16px;
         transition: 0.3s;
+        border-radius: 10px;
       }
 
       li a:hover {
-        background-color: #111;
+        background-color: #ebebeb;
+        color: #111;
+      }
+
+      ul{
+        list-style-type: none;
+          margin: 0;
+          padding: 0 60px;
+          overflow: hidden;
+          background-color: #2fa4ff;
       }
 
       .languages{
@@ -83,30 +93,30 @@
       .languages .full_line{
         width: 100%;
         background: #111;
-        height: 4px;
+        height: 3px;
       }
 
       .languages .back_line{
         width: 95%;
-        background: linear-gradient(to right,#91099b,  #6f0000);
+        background:  #08fdd8;
         height: 100%;
       }
 
       .languages .front_line{
         width: 85%;
-        background: linear-gradient(to right,#191654, #43C6AC );
+        background: rgb(210, 108, 213);
         height: 100%;
       }
 
       .languages .data_line{
         width: 78%;
-        background: linear-gradient(to right,#000C40  , #F0F2F0);
+        background: rgb(255, 34, 83);
         height: 100%;
       }
 
       .languages .ai_line{
         width: 55%;
-        background: linear-gradient(to right,#191654, #43C6AC );
+        background: #08fdd8;
         height: 100%;
       }
 
@@ -119,10 +129,8 @@
       <ul>
         <li><a href="{%url 'blog-index'%}">Blendi's Blog Page</a></li>
         <div class="navigation">
+          <li><a href="{%url 'users-about_me'%}">About Me</a></li>
           <li><a href="{%url 'users-login'%}">Log In</a></li>
-          <li>
-            <a href="{%url 'users-about_me'%}">About Me</a>
-          </li>
         </div>
       </ul>
     </div>

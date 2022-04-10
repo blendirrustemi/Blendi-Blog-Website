@@ -162,10 +162,13 @@
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
+        transition: 0.3s;
+        border-radius: 10px;
       }
 
       li a:hover {
-        background-color: #111;
+        background-color: #ebebeb;
+        color: #111;
       }
 
       h2, h3, h5 {
@@ -197,9 +200,7 @@
     <div class="nav">
       <ul>
         <li><a href="#">Blendi's Blog Page</a></li>
-        <li style="float: right">
-          <a href="{%url 'users-logout'%}">Logout</a>
-        </li>
+        <li style="float: right"><a href="{%url 'users-logout'%}">Logout</a></li>
         <li style="float: right"><a href="#">{{request.user.username}}</a></li>
       </ul>
     </div>
@@ -210,9 +211,7 @@
       <ul>
         <li><a href="#">Blendi's Blog Page</a></li>
         <li style="float: right"><a href="{%url 'users-login'%}">Log In</a></li>
-        <li style="float: right">
-          <a href="{%url 'users-about_me'%}">About Me</a>
-        </li>
+        <li style="float: right"><a href="{%url 'users-about_me'%}">About Me</a></li>
       </ul>
     </div>
 

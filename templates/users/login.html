@@ -192,10 +192,12 @@
         text-align: center;
         padding: 14px 16px;
         transition: 0.3s;
+        border-radius: 10px;
       }
 
       li a:hover {
-        background-color: #111;
+        background-color: #ebebeb;
+        color: #111;
       }
     </style>
   </head>
@@ -206,10 +208,8 @@
       <ul>
         <li><a href="{%url 'blog-index'%}">Blendi's Blog Page</a></li>
         <div class="navigation">
+          <li><a href="{%url 'users-about_me'%}">About Me</a></li>
           <li><a href="{%url 'users-login'%}">Log In</a></li>
-          <li>
-            <a href="{%url 'users-about_me'%}">About Me</a>
-          </li>
         </div>
       </ul>
     </div>
