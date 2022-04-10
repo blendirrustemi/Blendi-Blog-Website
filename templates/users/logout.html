@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log Out</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500&display=swap" rel="stylesheet">
+    
     <style>
       * {
         box-sizing: border-box;
@@ -15,7 +19,13 @@
       body{
         margin: 0;
         padding: 0;
-        font-family: montserrat, sans-serif;
+        font-family: 'Montserrat', sans-serif;
+        background: #1d1d1d;
+        color: #fff;
+      }
+
+      body a{
+        color: #08fdd8;
       }
 
       .main-content {
@@ -28,9 +38,9 @@
       ul {
         list-style-type: none;
         margin: 0;
-        padding: 0;
+        padding: 0 60px;
         overflow: hidden;
-        background-color: #2fa4ff;
+        background-color: #181818;
       }
 
       li {
@@ -48,8 +58,8 @@
       }
 
       li a:hover {
-        background-color: #ebebeb;
-        color: #111;
+        /* background-color: #ebebeb; */
+        color: #08fdd8;
       }
     </style>
   </head>
@@ -67,7 +77,6 @@
     </div>
     <div class="main-content">
       <div class="logout_header">
-        <h3>Logout Page</h3>
       </div>
       <div class="log_msg">
         <p>You have been logged out.</p>

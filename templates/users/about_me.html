@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Me</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
     <style>
       *,
       *::before,
@@ -19,15 +30,15 @@
       body {
         padding: 0;
         margin: 0;
-        /* background: #1d1d1d; */
-        background: linear-gradient(120deg, #2980b9, #8e44ad);
-        font-family: montserrat, sans-serif;
+        background: #1d1d1d;
+        font-family: "Montserrat", sans-serif;
         height: 100vh;
+        color: #fff;
       }
 
       .main-content {
         display: flex;
-        justify-content: space-evenly;
+        flex-direction: column;
         flex-wrap: wrap;
         padding: 50px;
       }
@@ -42,9 +53,9 @@
       .nav ul {
         list-style-type: none;
         margin: 0;
-        padding: 0;
+        padding: 0 60px;
         overflow: hidden;
-        background-color: #2fa4ff;
+        background-color: #181818;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -72,52 +83,137 @@
       }
 
       li a:hover {
-        background-color: #ebebeb;
-        color: #111;
+        /* background-color: #ebebeb; */
+        color: #08fdd8;
       }
 
-      ul{
+      ul {
         list-style-type: none;
-          margin: 0;
-          padding: 0 60px;
-          overflow: hidden;
-          background-color: #2fa4ff;
+        margin: 0;
+        padding: 0 60px;
+        overflow: hidden;
+        background-color: #2fa4ff;
       }
 
-      .languages{
+      /*  */
+
+      .info_about {
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        align-items: center;
+        width: 100%;
+        gap: 40px;
       }
 
-      .languages .full_line{
+      .info_b h3 {
+        text-align: center;
+      }
+
+      .info_b p {
+        line-height: 1.7;
+        margin: 0;
+        padding: 0 32px;
+        text-align: center;
+      }
+
+      .languages {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        gap: 15px;
+        width: clamp(1px, 550px, 90%);
+      }
+
+      .languages .full_line {
         width: 100%;
         background: #111;
         height: 3px;
       }
 
-      .languages .back_line{
+      .languages .back_line {
         width: 95%;
-        background:  #08fdd8;
+        background: #08fdd8;
         height: 100%;
       }
 
-      .languages .front_line{
+      .languages .front_line {
         width: 85%;
         background: rgb(210, 108, 213);
         height: 100%;
       }
 
-      .languages .data_line{
+      .languages .data_line {
         width: 78%;
         background: rgb(255, 34, 83);
         height: 100%;
       }
 
-      .languages .ai_line{
+      .languages .ai_line {
         width: 55%;
         background: #08fdd8;
         height: 100%;
+      }
+
+      .footer {
+        background: #181818;
+        padding: 20px 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 50px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      @media (max-width: 400px) {
+        .footer {
+          position: unset;
+        }
+      }
+
+      .footer .contact {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .footer .contact .icons {
+        display: grid;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        background: #fff;
+        border-radius: 10px;
+        transition: 0.3s;
+      }
+
+      .footer .contact .fb:hover {
+        background: #5784ff;
+      }
+
+      .footer .contact .insta:hover {
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      }
+
+      .footer .contact .linkedin:hover {
+        background: #5784ff;
+      }
+
+      .footer .contact .git:hover {
+        background: #171515;
+      }
+
+      .footer .contact .icons:hover i {
+        color: #fff;
+      }
+
+      .footer .contact .icons i {
+        font-size: 22px;
+        color: #111;
+        transition: 0.3s;
       }
 
     </style>
@@ -127,7 +223,7 @@
     {% block content %}
     <div class="nav">
       <ul>
-        <li><a href="{%url 'blog-index'%}">Blendi's Blog Page</a></li>
+        <li><a href="{%url 'blog-index'%}">Blendi's Portfolio</a></li>
         <div class="navigation">
           <li><a href="{%url 'users-about_me'%}">About Me</a></li>
           <li><a href="{%url 'users-login'%}">Log In</a></li>
@@ -136,57 +232,64 @@
     </div>
     <div class="main-content">
       <div class="title_header">
-        <h2>Blendi Rrustemi</h2>
+        <!-- <h2>Blendi Rrustemi</h2> -->
       </div>
 
       <div class="info_about">
-        <h3>Who am I?</h3>
-        <p>
-
-          Hi. I'm Blendi, a web & software developer from Prishtina, Kosovo. <br>
-          Currently, a third year student at Rochester Institute of Technology (RITK). <br>
-          My preferred tools are Python, Django, SQL and React.js
-
-        </p>
+        <div class="info_b">
+          <h3>Who am I?</h3>
+          <p>
+            Hi. I'm
+            <span style="color: #08fdd8; font-weight: 700">Blendi Rrustemi</span
+            >, a web & software developer from Prishtina, Kosovo. <br />
+            Currently, a third year student at Rochester Institute of Technology
+            (RITK). <br />
+            My preferred tools are Python, Django, PHP, SQL and React.js
+          </p>
+        </div>
 
         <div class="languages">
           <div class="line_container">
             <h3>Back-end</h3>
             <div class="full_line">
-              <div class="back_line">
-
-              </div>
+              <div class="back_line"></div>
             </div>
           </div>
           <div class="line_container">
             <h3>Front-end</h3>
             <div class="full_line">
-              <div class="front_line">
-
-              </div>
+              <div class="front_line"></div>
             </div>
           </div>
 
           <div class="line_container">
             <h3>Databases</h3>
             <div class="full_line">
-              <div class="data_line">
-
-              </div>
+              <div class="data_line"></div>
             </div>
           </div>
 
           <div class="line_container">
             <h3>Artificial Intelligence</h3>
             <div class="full_line">
-              <div class="ai_line">
-
-              </div>
+              <div class="ai_line"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="footer">
+      <p>&copy; Blendi Rrustemi 2022</p>
+
+      <div class="contact">
+        <a class="icons fb" href=""><i class="fa fa-facebook"></i></a>
+        <a class="icons insta" href=""><i class="fa fa-instagram"></i></a>
+        <a class="icons linkedin" href=""><i class="fa fa-linkedin"></i></a>
+        <a class="icons git" href=""><i class="fa fa-github"></i></a>
+      </div>
+    </div>
+
     {% endblock %}
   </body>
 </html>

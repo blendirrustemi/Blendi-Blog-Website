@@ -6,9 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log In</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
-      *,	
-      *::before,	
+      *,
+      *::before,
       *::after {
         box-sizing: border-box;
         text-decoration: none;
@@ -18,12 +25,13 @@
       body {
         padding: 0;
         margin: 0;
-        background: linear-gradient(120deg, #2980b9, #8e44ad);
-        font-family: montserrat, sans-serif;
+        /* background: linear-gradient(120deg, #2980b9, #8e44ad); */
+        background: #1d1d1d;
+        /* background: #1d1d1d; */
+        font-family: "Montserrat", sans-serif;
         height: 100vh;
       }
 
-      
       .main-content {
         display: flex;
         justify-content: space-evenly;
@@ -31,14 +39,14 @@
         padding: 50px;
       }
 
-      @media (max-width: 500px) {	
-        .main-content {	
-          padding: 50px 0;	
-        }	
+      @media (max-width: 500px) {
+        .main-content {
+          padding: 50px 0;
+        }
       }
 
       .forms {
-        max-width:90%;
+        max-width: 90%;
         width: 400px;
         border-radius: 20px;
         background: #fcfcfc;
@@ -166,24 +174,23 @@
       .nav ul {
         list-style-type: none;
         margin: 0;
-        padding: 0;
-        background-color: #2fa4ff;
-        display: flex;	
-        justify-content: space-between;	
+        padding: 0 60px;
+        background-color: #181818;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
       }
 
-      .nav ul .navigation {	
-        display: flex;	
-        align-items: center;	
+      .nav ul .navigation {
+        display: flex;
+        align-items: center;
       }
 
-      @media (max-width: 400px) {	
-        .nav ul .navigation {	
-          flex-direction: column;	
-          align-items: flex-end;	
-        }	
-        	
+      @media (max-width: 400px) {
+        .nav ul .navigation {
+          flex-direction: column;
+          align-items: flex-end;
+        }
       }
 
       li a {
@@ -196,17 +203,17 @@
       }
 
       li a:hover {
-        background-color: #ebebeb;
-        color: #111;
+        /* background-color: #ebebeb; */
+        color: #08fdd8;
       }
     </style>
   </head>
 
   <body>
-     {% block content %}
+    {% block content %}
     <div class="nav">
       <ul>
-        <li><a href="{%url 'blog-index'%}">Blendi's Blog Page</a></li>
+        <li><a href="{%url 'blog-index'%}">Blendi's Portfolio</a></li>
         <div class="navigation">
           <li><a href="{%url 'users-about_me'%}">About Me</a></li>
           <li><a href="{%url 'users-login'%}">Log In</a></li>
@@ -239,7 +246,6 @@
             id=""
             value="Log In"
           />
-         
         </form>
       </div>
     </div>
