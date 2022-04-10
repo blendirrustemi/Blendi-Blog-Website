@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me</title>
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        text-decoration: none;
+      }
+
+      /* SIGN UP DESIGN */
+
+      body {
+        padding: 0;
+        margin: 0;
+        /* background: #1d1d1d; */
+        background: linear-gradient(120deg, #2980b9, #8e44ad);
+        font-family: montserrat, sans-serif;
+        height: 100vh;
+      }
+
+      .main-content {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        padding: 50px;
+      }
+
+      @media (max-width: 500px) {
+        .main-content {
+          padding: 50px 0;
+        }
+      }
+
+      /* Nav */
+      .nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #2fa4ff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav ul .navigation {
+        display: flex;
+        align-items: center;
+      }
+
+      @media (max-width: 400px) {
+        .nav ul .navigation {
+          flex-direction: column;
+          align-items: flex-end;
+        }
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        transition: 0.3s;
+      }
+
+      li a:hover {
+        background-color: #111;
+      }
+
+      .languages{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .languages .full_line{
+        width: 100%;
+        background: #111;
+        height: 4px;
+      }
+
+      .languages .back_line{
+        width: 95%;
+        background: linear-gradient(to right,#91099b,  #6f0000);
+        height: 100%;
+      }
+
+      .languages .front_line{
+        width: 85%;
+        background: linear-gradient(to right,#191654, #43C6AC );
+        height: 100%;
+      }
+
+      .languages .data_line{
+        width: 78%;
+        background: linear-gradient(to right,#000C40  , #F0F2F0);
+        height: 100%;
+      }
+
+      .languages .ai_line{
+        width: 55%;
+        background: linear-gradient(to right,#191654, #43C6AC );
+        height: 100%;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    {% block content %}
+    <div class="nav">
+      <ul>
+        <li><a href="{%url 'blog-index'%}">Blendi's Blog Page</a></li>
+        <div class="navigation">
+          <li><a href="{%url 'users-login'%}">Log In</a></li>
+          <li>
+            <a href="{%url 'users-about_me'%}">About Me</a>
+          </li>
+        </div>
+      </ul>
+    </div>
+    <div class="main-content">
+      <div class="title_header">
+        <h2>Blendi Rrustemi</h2>
+      </div>
+
+      <div class="info_about">
+        <h3>Who am I?</h3>
+        <p>
+
+          Hi. I'm Blendi, a web & software developer from Prishtina, Kosovo. <br>
+          Currently, a third year student at Rochester Institute of Technology (RITK). <br>
+          My preferred tools are Python, Django, SQL and React.js
+
+        </p>
+
+        <div class="languages">
+          <div class="line_container">
+            <h3>Back-end</h3>
+            <div class="full_line">
+              <div class="back_line">
+
+              </div>
+            </div>
+          </div>
+          <div class="line_container">
+            <h3>Front-end</h3>
+            <div class="full_line">
+              <div class="front_line">
+
+              </div>
+            </div>
+          </div>
+
+          <div class="line_container">
+            <h3>Databases</h3>
+            <div class="full_line">
+              <div class="data_line">
+
+              </div>
+            </div>
+          </div>
+
+          <div class="line_container">
+            <h3>Artificial Intelligence</h3>
+            <div class="full_line">
+              <div class="ai_line">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>
